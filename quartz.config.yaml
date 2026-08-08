@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: Zero to Tech
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
-  locale: en-US
+  locale: zh-CN
   baseUrl: wswswft.cn/blog
   ignorePatterns:
     - private
@@ -231,8 +231,8 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        GitHub: https://github.com/wswswft
+        个人主页: https://wswswft.cn/
     layout:
       position: footer
       priority: 50
@@ -290,13 +290,16 @@ layout:
         beforeBody: []
         left: []
         right: []
-    content: {}
+    content:
+      template: hybrid
     folder:
+      template: hybrid
       exclude:
         - reader-mode
       positions:
         right: []
     tag:
+      template: hybrid
       exclude:
         - reader-mode
       positions:
