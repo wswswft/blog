@@ -64,7 +64,7 @@ tags:
 
     2. 用户在部署优化的 TensorRT 引擎时可以使用 TensorRT 定位的各种运行时。
 
-![图片\.png](assets/图片%202.png)
+![TensorRT 生态和工作流](assets/tensorrt-02.png)
 
 ## 转换
 

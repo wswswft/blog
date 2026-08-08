@@ -1,7 +1,9 @@
 import { PageFrame, PageFrameProps } from "./types"
 import HeaderConstructor from "../Header"
+import LegalFooterConstructor from "../LegalFooter"
 
 const Header = HeaderConstructor()
+const LegalFooter = LegalFooterConstructor()
 
 /**
  * Full-width page frame — no sidebars. The center content area spans the
@@ -47,6 +49,7 @@ export const FullWidthFrame: PageFrame = {
         {footer.map((FooterComponent) => (
           <FooterComponent {...componentData} />
         ))}
+        <LegalFooter {...componentData} />
       </>
     )
   },
