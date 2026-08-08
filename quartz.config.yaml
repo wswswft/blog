@@ -10,6 +10,7 @@ configuration:
   baseUrl: wswswft.cn/blog
   ignorePatterns:
     - private
+    - scratch
     - templates
     - .obsidian
   theme:
@@ -272,6 +273,10 @@ plugins:
       enableInteraction: true
       darkMode: auto
       exportPadding: 20
+    order: 50
+  - source: github:quartz-community/tui
+    enabled: true
+    options: {}
     order: 50
 layout:
   groups:
