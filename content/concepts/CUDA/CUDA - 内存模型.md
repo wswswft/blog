@@ -138,7 +138,7 @@ tags:
 
 ![图片\.png](assets/图片%2012.png)
 
-![图片\.png](assets/图片%203.png)
+![CUDA 内存模型示意图](assets/cuda-03.png)
 
 ## 全局内存
 
@@ -188,7 +188,7 @@ tags:
 
 - 访问共享内存必须加入同步机制：线程块内同步 void \_\_syncthreads\(\);
 
-![图片\.png](assets/图片%201.png)
+![CUDA 内存层次示意图](assets/cuda-01.png)
 
 - 不同计算能力的架构，每个SM中拥有的共享内存大小是不同的；
 

@@ -15,7 +15,7 @@ tags:
 
 - 本节将介绍将 ONNX model zoo中的预训练 ResNet\-50 模型转换为 TensorRT 引擎的五个步骤。从视觉上看，这是我们将遵循的过程：
 
-![图片\.png](assets/图片%203.png)
+![TensorRT ONNX 部署流程](assets/tensorrt-03.png)
 
 - 了解  TensorRT 工作流程的基本步骤后，您可以深入了解 Jupyter 笔记本（请参阅以下主题），了解如何使用 Torch\-TensorRT 或  ONNX 使用 TensorRT。使用 PyTorch 框架，您可以按照介绍性的 Jupyter Notebook [ 运行本指南](https://github.com/NVIDIA/TensorRT/tree/main/quickstart/IntroNotebooks/0.%20Running%20This%20Guide.ipynb)进行作，其中更详细地介绍了这些工作流程步骤。
 
@@ -78,7 +78,7 @@ trtexec --onnx=resnet50/model.onnx --saveEngine=resnet_engine_intro.engine –-s
 
 - 对于喜欢基于 GUI 的工具的易用性的开发人员，[Nsight 深度学习设计器](https://developer.nvidia.com/nsight-dl-designer)使您能够轻松地将 ONNX 模型转换为 TensorRT 引擎文件。`trtexec` 的大多数命令行参数也可以在 Nsight Deep Learning Designer 的 GUI 上找到。
 
-![图片\.png](assets/图片.png)
+![TensorRT 模型转换选项](assets/tensorrt-00.png)
 
 ## 部署模型
 
@@ -124,7 +124,7 @@ predictions = trt_model.predict(dummy_input_batch)
 
     - 将 PyTorch 模型转换为 TensorRT 的一种方法是将 PyTorch 模型导出到 ONNX，然后将其转换为 TensorRT 引擎。有关更多详细信息，请参阅[通过 ONNX 将 PyTorch 与 TensorRT 一起使用 ](https://github.com/NVIDIA/TensorRT/blob/HEAD/quickstart/IntroNotebooks/2.%20Using%20PyTorch%20through%20ONNX.ipynb)。笔记本将引导你完成此路径，从以下导出步骤开始：
 
-![图片\.png](assets/图片%201.png)
+![TensorRT 精度选择](assets/tensorrt-01.png)
 
         1. 从 `torchvision` 导入 ResNet\-50 模型。这将加载具有预训练权重的 ResNet\-50 副本
 

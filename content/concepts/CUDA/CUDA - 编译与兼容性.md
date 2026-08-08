@@ -90,7 +90,7 @@ tags:
 
         - RTX 4060为8\.9,最低支持7\.5
 
-![图片\.png](assets/图片.png)
+![CUDA 编译与 GPU 架构关系](assets/cuda-00.png)
 
 ![图片\.png](assets/图片%2051.png)
 
