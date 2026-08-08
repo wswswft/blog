@@ -112,7 +112,7 @@ tags:
 
 所需线程束数量 = 延迟 × 吞吐量
 
-![图片\.png](assets/图片%202.png)
+![CUDA 性能优化示意图](assets/cuda-02.png)
 
 ![图片\.png](assets/图片%2014.png)
 

@@ -1,4 +1,7 @@
 import { PageFrame, PageFrameProps } from "./types"
+import LegalFooterConstructor from "../LegalFooter"
+
+const LegalFooter = LegalFooterConstructor()
 
 /**
  * Minimal page frame — no sidebars, no header/footer chrome. Only the
@@ -19,6 +22,7 @@ export const MinimalFrame: PageFrame = {
         {footer.map((FooterComponent) => (
           <FooterComponent {...componentData} />
         ))}
+        <LegalFooter {...componentData} />
       </>
     )
   },

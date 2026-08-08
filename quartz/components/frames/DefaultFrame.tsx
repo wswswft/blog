@@ -1,7 +1,9 @@
 import { PageFrame, PageFrameProps } from "./types"
 import HeaderConstructor from "../Header"
+import LegalFooterConstructor from "../LegalFooter"
 
 const Header = HeaderConstructor()
+const LegalFooter = LegalFooterConstructor()
 
 /**
  * The default page frame — three-column layout with left sidebar, center
@@ -57,6 +59,7 @@ export const DefaultFrame: PageFrame = {
         {footer.map((FooterComponent) => (
           <FooterComponent {...componentData} />
         ))}
+        <LegalFooter {...componentData} />
       </>
     )
   },
