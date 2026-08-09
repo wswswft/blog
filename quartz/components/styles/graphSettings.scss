@@ -1,0 +1,331 @@
+.graph {
+  position: relative;
+
+  > h3 {
+    padding-right: 2.25rem;
+  }
+}
+
+.graph-settings {
+  position: relative;
+  z-index: 4;
+  margin: 0;
+
+  button,
+  input {
+    font: inherit;
+  }
+}
+
+.graph-settings__toggle {
+  display: grid;
+  width: 1.85rem;
+  height: 1.85rem;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 82%, transparent);
+  border-radius: 0.55rem;
+  position: absolute;
+  top: -1.75rem;
+  right: 0;
+  place-items: center;
+  color: var(--darkgray);
+  background: color-mix(in srgb, var(--light) 88%, transparent);
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &[aria-expanded="true"] {
+    border-color: color-mix(in srgb, var(--secondary) 52%, var(--lightgray));
+    color: var(--secondary);
+    background: color-mix(in srgb, var(--secondary) 10%, var(--light));
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--secondary) 50%, transparent);
+    outline-offset: 2px;
+  }
+}
+
+.graph-settings__panel {
+  margin-top: 0.65rem;
+  padding: 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 76%, transparent);
+  border-radius: 0.8rem;
+  color: var(--darkgray);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--secondary) 7%, var(--light)),
+    var(--light) 48%
+  );
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--dark) 8%, transparent);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.graph-settings__topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.06rem;
+  }
+
+  strong {
+    color: var(--dark);
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+}
+
+.graph-settings__eyebrow {
+  color: var(--gray);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.graph-settings__reset {
+  padding: 0.3rem 0.5rem;
+  border: 0;
+  border-radius: 0.45rem;
+  color: var(--gray);
+  font-size: 0.68rem;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--secondary);
+    background: color-mix(in srgb, var(--secondary) 9%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--secondary) 45%, transparent);
+    outline-offset: 1px;
+  }
+}
+
+.graph-settings__scopes {
+  display: grid;
+  margin-top: 0.75rem;
+  padding: 0.2rem;
+  border-radius: 0.58rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.2rem;
+  background: color-mix(in srgb, var(--lightgray) 58%, transparent);
+
+  button {
+    padding: 0.38rem 0.45rem;
+    border: 0;
+    border-radius: 0.42rem;
+    color: var(--gray);
+    font-size: 0.72rem;
+    font-weight: 650;
+    background: transparent;
+    cursor: pointer;
+
+    &.is-active {
+      color: var(--dark);
+      background: var(--light);
+      box-shadow: 0 2px 8px color-mix(in srgb, var(--dark) 9%, transparent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid color-mix(in srgb, var(--secondary) 48%, transparent);
+      outline-offset: -1px;
+    }
+  }
+}
+
+.graph-settings__ranges {
+  display: flex;
+  margin-top: 0.85rem;
+  flex-direction: column;
+  gap: 0.72rem;
+}
+
+.graph-settings__range {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  gap: 0.28rem;
+
+  input[type="range"] {
+    width: 100%;
+    height: 0.9rem;
+    margin: 0;
+    accent-color: var(--secondary);
+    cursor: pointer;
+  }
+}
+
+.graph-settings__range-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.71rem;
+
+  output {
+    color: var(--secondary);
+    font-size: 0.67rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+}
+
+.graph-settings__toggles {
+  display: flex;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--lightgray) 70%, transparent);
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.graph-settings__switch {
+  display: grid;
+  margin: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--darkgray);
+  font-size: 0.71rem;
+  cursor: pointer;
+
+  input {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  input:focus-visible + .graph-settings__switch-track {
+    outline: 2px solid color-mix(in srgb, var(--secondary) 48%, transparent);
+    outline-offset: 2px;
+  }
+
+  input:checked + .graph-settings__switch-track {
+    border-color: var(--secondary);
+    background: var(--secondary);
+
+    &::after {
+      transform: translateX(0.72rem);
+    }
+  }
+}
+
+.graph-settings__switch-track {
+  width: 1.7rem;
+  height: 0.98rem;
+  border: 1px solid color-mix(in srgb, var(--gray) 52%, transparent);
+  border-radius: 999px;
+  position: relative;
+  background: color-mix(in srgb, var(--lightgray) 72%, transparent);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+
+  &::after {
+    content: "";
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.08rem;
+    left: 0.09rem;
+    background: var(--light);
+    box-shadow: 0 1px 4px color-mix(in srgb, var(--dark) 22%, transparent);
+    transition: transform 160ms ease;
+  }
+}
+
+.graph-settings__tags {
+  display: flex;
+  margin: 0.8rem 0 0;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: var(--darkgray);
+  font-size: 0.71rem;
+
+  input {
+    min-width: 0;
+    padding: 0.42rem 0.5rem;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 82%, transparent);
+    border-radius: 0.48rem;
+    color: var(--dark);
+    font-size: 0.7rem;
+    background: color-mix(in srgb, var(--light) 82%, transparent);
+
+    &::placeholder {
+      color: var(--gray);
+      opacity: 0.72;
+    }
+
+    &:focus {
+      border-color: color-mix(in srgb, var(--secondary) 55%, var(--lightgray));
+      outline: 2px solid color-mix(in srgb, var(--secondary) 16%, transparent);
+    }
+  }
+}
+
+.graph-settings__hint {
+  margin: 0.62rem 0 0;
+  color: var(--gray);
+  font-size: 0.62rem;
+  line-height: 1.45;
+}
+
+@media all and (max-width: 800px) {
+  .graph-settings__toggle {
+    width: 2rem;
+    height: 2rem;
+    top: -1.85rem;
+  }
+
+  .graph-settings__panel {
+    padding: 0.9rem;
+  }
+
+  .graph-settings__range-heading,
+  .graph-settings__switch,
+  .graph-settings__tags {
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .graph-settings__toggle,
+  .graph-settings__switch-track,
+  .graph-settings__switch-track::after {
+    transition: none;
+  }
+}
