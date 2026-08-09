@@ -5,6 +5,7 @@ tags:
   - "concept"
   - "CUDA"
   - "GPU"
+cover: assets/cuda-1-1.jpg
 ---
 # CUDA - 编译与兼容性
 

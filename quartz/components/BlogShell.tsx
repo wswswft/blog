@@ -14,11 +14,12 @@ function pageDate(page: QuartzPluginData): globalThis.Date | undefined {
 function isPublishablePage(page: QuartzPluginData): boolean {
   const slug = page.slug ?? ""
   const tags = page.frontmatter?.tags ?? []
+  const showInRecent = page.frontmatter?.showInRecent === true
   return (
     slug !== "" &&
     slug !== "index" &&
     !slug.endsWith("/index") &&
-    !slug.startsWith("meta/") &&
+    (!slug.startsWith("meta/") || showInRecent) &&
     !slug.startsWith("tags/") &&
     !tags.includes("moc") &&
     Boolean(page.frontmatter?.title)
