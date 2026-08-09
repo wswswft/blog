@@ -745,6 +745,22 @@ footer.site-records {
   }
 }
 
+// Let the fixed global graph escape the sticky, scrollable right rail.
+// The normal cards stay clipped; these overrides only apply while the modal is open.
+body:has(.global-graph-outer.active) {
+  overflow: hidden;
+}
+
+.blog-layout__quartz-widgets .graph:has(> .global-graph-outer.active) {
+  overflow: visible;
+}
+
+.blog-layout__right:has(.global-graph-outer.active) {
+  max-height: none;
+  overflow: visible;
+  position: static;
+}
+
 @media all and (max-width: 1180px) {
   .page[data-frame="hybrid"] > #quartz-body > .blog-layout {
     grid-template-columns: 220px minmax(0, 1fr);
