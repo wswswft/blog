@@ -217,6 +217,7 @@ export const BlogHome: QuartzComponent = (props: QuartzComponentProps) => {
 }
 
 export const BlogWidgets: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
+  const isHome = fileData.slug === "index"
   const pages = sortedPublishedPages(allFiles)
   const tagCounts = new Map<string, number>()
   for (const page of allFiles) {
@@ -257,18 +258,20 @@ export const BlogWidgets: QuartzComponent = ({ fileData, allFiles }: QuartzCompo
           ))}
         </div>
       </section>
-      <section class="blog-widget">
-        <p class="blog-widget__label">继续阅读</p>
-        <ol class="blog-widget__recent">
-          {pages.slice(0, 5).map((page) => (
-            <li>
-              <a class="internal" href={resolveRelative(fileData.slug!, page.slug!)}>
-                {page.frontmatter?.title}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </section>
+      {!isHome && (
+        <section class="blog-widget">
+          <p class="blog-widget__label">继续阅读</p>
+          <ol class="blog-widget__recent">
+            {pages.slice(0, 5).map((page) => (
+              <li>
+                <a class="internal" href={resolveRelative(fileData.slug!, page.slug!)}>
+                  {page.frontmatter?.title}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
     </div>
   )
 }
